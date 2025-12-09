@@ -4,7 +4,6 @@
     width: 100%;
     align-items: center;
     padding: 0.7vw 1vw;
-    border: 1px solid black;
     gap: 1vw;
 }
 
@@ -53,7 +52,7 @@
 .header-buttons a
 {
     font-weight: 600;
-    font-size: 1.1vw;
+    font-size: 1vw;
     padding: 0.5vw 1vw;
     border: 0.2vw solid maroon;
     border-radius: 0.5vw;
@@ -66,7 +65,7 @@
 
 .header-buttons a:first-child:hover
 {
-    background-color: gold;
+    background-color: #EEE;
 }
 
 .header-buttons a:last-child

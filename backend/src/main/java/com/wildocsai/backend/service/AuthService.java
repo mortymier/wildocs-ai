@@ -12,7 +12,6 @@ import com.wildocsai.backend.repository.VerificationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Service
@@ -48,6 +47,12 @@ public class AuthService
 
     public RegisterResponse register(RegisterRequest request, UserRole role)
     {
+        // Check if ID number is already used
+        if(userRepository.existsByIdNum(request.getIdNum()))
+        {
+            throw new RuntimeException("ID number is already used");
+        }
+
         // Check if email is already used
         if(userRepository.existsByEmail(request.getEmail()))
         {

@@ -13,7 +13,7 @@ export default function Header()
             </Link>
             <div className="header-space"></div>
             <div className="header-buttons">
-                <Link to="/"> Login </Link>
+                <Link to="/login"> Login </Link>
                 <Link to="/"> Register </Link>
             </div>
         </header>

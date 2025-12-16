@@ -1,0 +1,130 @@
+.login-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 0;
+    padding-bottom: 5vw;
+    min-height: 90vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.login-container h1
+{
+    margin: 0;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    color: maroon;
+}
+
+.login-container p:first-of-type
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    font-size: 1.1vw;
+}
+
+.login-container form
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 3vw 2vw;
+    border: 1px solid maroon;
+    border-radius: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.icon-label
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vw;
+    gap: 1vw
+}
+
+.login-container img
+{
+    width: 1.2vw;
+}
+
+.login-container label
+{
+    font-weight: 600;
+    font-size: 1.1vw;
+    color: maroon;
+}
+
+.login-container input
+{
+    padding: 0.6vw 1vw;
+    margin-bottom: 2vw;
+    border: 0.1vw solid maroon;
+    border-radius: 0.5vw;
+    font-size: 1.1vw;
+    background-color: #EEE;
+}
+
+.login-container input:focus
+{
+    outline-color: gold;
+    background-color: white;
+}
+
+.account-actions
+{
+    display: flex;
+    margin-bottom: 2vw;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.account-actions input
+{
+    margin: 0;
+    accent-color: maroon;
+    width: 1.1vw;
+}
+
+.account-actions span, .account-actions2 span
+{
+    font-size: 1vw;
+}
+
+.account-actions a
+{
+    margin-left: 7vw;
+    font-size: 1vw;
+    font-weight: 600;
+    text-decoration: none;
+    color: maroon;
+}
+
+.login-container form button
+{
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    margin-bottom: 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+}
+
+.account-actions2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.account-actions2 a
+{
+    font-size: 1vw;
+    font-weight: 600;
+    text-decoration: none;
+    color: maroon;
+}

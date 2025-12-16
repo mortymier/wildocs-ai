@@ -25,7 +25,7 @@ export default function Home()
                             automated scoring, and collaborative review features all in
                             one platform.
                         </p>
-                        <Link to="/"> Get Started </Link>
+                        <Link to="/register"> Get Started </Link>
                     </div>
                     <div>
                         <img src={hero_image} alt="Hero section image about AI"/>

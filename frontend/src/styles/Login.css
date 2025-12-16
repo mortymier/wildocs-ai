@@ -35,7 +35,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.icon-label
+.login-container .icon-label
 {
     display: flex;
     align-items: center;

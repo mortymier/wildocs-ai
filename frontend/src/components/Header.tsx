@@ -14,7 +14,7 @@ export default function Header()
             <div className="header-space"></div>
             <div className="header-buttons">
                 <Link to="/login"> Login </Link>
-                <Link to="/"> Register </Link>
+                <Link to="/register"> Register </Link>
             </div>
         </header>
     );

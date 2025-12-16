@@ -26,7 +26,7 @@ export default function Login()
                         required
                     />
                     <div className="icon-label"> 
-                        <img src={password_icon} alt="Email icon"/> 
+                        <img src={password_icon} alt="Password icon"/> 
                         <label htmlFor="password"> Password </label> 
                     </div>
                     <input 
@@ -43,7 +43,7 @@ export default function Login()
                     <button type="submit"> Login </button>
                     <div className="account-actions2"> 
                         <span> Don't have an account? </span>
-                        <Link to="/"> Sign up here </Link>
+                        <Link to="/register"> Sign up here </Link>
                     </div>
                 </form>
             </main>

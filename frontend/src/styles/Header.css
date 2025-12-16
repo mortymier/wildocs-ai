@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     align-items: center;
-    padding: 0.7vw 1vw;
+    padding: 0.7vw 2vw;
     gap: 1vw;
 }
 
@@ -65,7 +65,7 @@
 
 .header-buttons a:first-child:hover
 {
-    background-color: #EEE;
+    background-color: #fcd9d9;
 }
 
 .header-buttons a:last-child

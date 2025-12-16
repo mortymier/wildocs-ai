@@ -3,6 +3,7 @@ package com.wildocsai.backend.entity;
 // This entity is for email verification tokens
 import jakarta.persistence.*;
 import lombok.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tbl_vtokens")
@@ -20,4 +21,6 @@ public class VerificationEntity
     @OneToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+    private LocalDateTime verifiedAt;
 }

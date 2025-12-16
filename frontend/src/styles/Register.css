@@ -1,0 +1,131 @@
+.register-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 0;
+    min-height: 90vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.register-container h1
+{
+    margin: 0;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    color: maroon;
+}
+
+.register-container p:first-of-type
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    font-size: 1.1vw;
+}
+
+.register-container form
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 3vw 2vw;
+    border: 1px solid maroon;
+    border-radius: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register-container .icon-label
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vw;
+    gap: 1vw
+}
+
+.register-container .icon-label img
+{
+    width: 1.2vw;
+}
+
+.register-container .icon-label label
+{
+    font-weight: 600;
+    font-size: 1.1vw;
+    color: maroon;
+}
+
+.register-container input
+{
+    padding: 0.6vw 1vw;
+    margin-bottom: 2vw;
+    border: 0.1vw solid maroon;
+    border-radius: 0.5vw;
+    font-size: 1.1vw;
+    background-color: #EEE;
+}
+
+.register-container input:focus
+{
+    outline-color: gold;
+    background-color: white;
+}
+
+.register-container hr
+{
+    width: 95%;
+    margin-bottom: 2vw;
+}
+
+.terms-conditions
+{
+    display: flex;
+    margin-bottom: 3vw;
+    margin-left: 1vw;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.terms-conditions input
+{
+    margin: 0;
+    accent-color: maroon;
+    width: 1.1vw;
+}
+
+.terms-conditions span
+{
+    font-size: 1vw;
+}
+
+.register-buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.register-buttons button
+{
+    width: 11vw;
+    font-size: 1.1vw;
+    font-weight: 600;
+    padding: 0.75vw 0;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.register-buttons button:first-child
+{
+    border: 0.2vw solid maroon;
+    background-color: white;
+    color: maroon;
+}
+
+.register-buttons button:last-child
+{
+    border: 0.2vw solid goldenrod;
+    background-color: goldenrod;
+    color: white;
+}

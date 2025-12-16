@@ -63,6 +63,20 @@ public class AuthController
         }
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout()
+    {
+        ResponseCookie cookie = ResponseCookie.from("jwt", "")
+                .httpOnly(true)
+                .secure(false)  // set to true in production with HTTPS
+                .path("/")
+                .maxAge(0)  // immediately expire cookie
+                .sameSite("Strict")
+                .build();
+
+        return ResponseEntity.ok().header("Set-Cookie", cookie.toString()).body("Logged out successfully");
+    }
+
     @GetMapping("/verify")
     public ResponseEntity<?> verifyEmail(@RequestParam String token)
     {

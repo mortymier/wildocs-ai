@@ -19,6 +19,7 @@ export default function Verify()
                         id="token"
                         name="token"
                         type="text"
+                        placeholder="Enter received token here"
                         required
                     />
                     <button type="submit"> Verify Email </button>

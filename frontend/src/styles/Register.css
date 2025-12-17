@@ -2,7 +2,7 @@
 {
     display: flex;
     flex-direction: column;
-    padding: 3vw 0;
+    padding: 2vw 0;
     min-height: 90vh;
     align-items: center;
     justify-items: center;
@@ -28,10 +28,36 @@
     display: flex;
     flex-direction: column;
     width: 30%;
+    margin-bottom: 2vw;
     padding: 3vw 2vw;
     border: 1px solid maroon;
     border-radius: 1vw;
+    border-top: 0.5vw solid goldenrod;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register-container form a:first-child
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3vw;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.register-container form a:first-child h2
+{
+    margin: 0;
+    font-size: 2.3vw;
+    color: maroon;
+}
+
+.register-container form a:first-child h3
+{
+    margin: 0;
+    font-size: 1.1vw;
+    color: goldenrod;
 }
 
 .register-container .icon-label
@@ -102,6 +128,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2vw;
     gap: 1vw;
 }
 
@@ -128,4 +155,25 @@
     border: 0.2vw solid goldenrod;
     background-color: goldenrod;
     color: white;
+}
+
+.register-container .account-actions2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.register-container .account-actions2 span
+{
+    font-size: 1vw;
+}
+
+.register-container .account-actions2 a
+{
+    font-size: 1vw;
+    font-weight: 600;
+    text-decoration: none;
+    color: maroon;
 }

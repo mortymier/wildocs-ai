@@ -33,6 +33,7 @@
     width: 30%;
     padding: 3vw 2vw;
     border: 1px solid maroon;
+    border-top: 0.5vw solid goldenrod;
     border-radius: 1vw;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

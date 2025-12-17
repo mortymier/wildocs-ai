@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import user_icon from '../assets/user_icon.png';
 import id_icon from '../assets/id_icon.png';
@@ -11,11 +10,14 @@ export default function Register()
 {
     return (
         <>
-            <Header/>
             <main className="register-container">
                 <h1> Create Account </h1>
                 <p> Sign up to WILDOCS AI to get started </p>
                 <form>
+                    <Link to="/">
+                        <h2> WILDOCS AI </h2>
+                        <h3> AI-Powered SDD Evaluator </h3>
+                    </Link>
                     {/* First Name */}
                     <div className="icon-label"> 
                         <img src={user_icon} alt="User icon"/> 
@@ -98,6 +100,11 @@ export default function Register()
                     <div className="register-buttons"> 
                         <button type="button"> Reset </button>
                         <button type="submit"> Create Account </button>
+                    </div>
+                    {/* Sign In */}
+                    <div className="account-actions2"> 
+                        <span> Already have an account? </span>
+                        <Link to="/login"> Sign in here </Link>
                     </div>
                 </form>
             </main>

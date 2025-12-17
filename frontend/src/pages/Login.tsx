@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import email_icon from '../assets/email_icon.png';
 import password_icon from '../assets/password_icon.png';
@@ -9,11 +8,14 @@ export default function Login()
 {
     return (
         <>
-            <Header/>
             <main className="login-container">
                 <h1> Welcome Wildcat </h1>
-                <p> Sign in to your WILDOCS AI account to continue </p>
+                <p> Sign in to your account to continue </p>
                 <form>
+                    <Link to="/">
+                        <h2> WILDOCS AI </h2>
+                        <h3> AI-Powered SDD Evaluator </h3>
+                    </Link>
                     <div className="icon-label"> 
                         <img src={email_icon} alt="Email icon"/> 
                         <label htmlFor="email"> Email </label> 

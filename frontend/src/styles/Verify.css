@@ -94,3 +94,17 @@
     color: maroon;
     cursor: pointer;
 }
+
+.verify-container .error
+{
+    margin: 0;
+    margin-bottom: 2vw;
+    color: red;
+}
+
+.verify-container .success
+{
+    margin: 0;
+    margin-bottom: 2vw;
+    color: green;
+}

@@ -63,6 +63,20 @@ public class AuthController
         }
     }
 
+    @PostMapping("/register/teacher")
+    public ResponseEntity<?> registerTeacher(@Valid @RequestBody RegisterRequest request)
+    {
+        try
+        {
+            RegisterResponse response = authService.register(request, UserRole.TEACHER);
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        }
+        catch(RuntimeException e)
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
     @PostMapping("/logout")
     public ResponseEntity<?> logout()
     {

@@ -21,13 +21,18 @@ public class EmailService
 
     public void sendVerificationEmail(String toEmail, String token)
     {
-        // TO DO: Once you have a frontend, replace verification link with email verification page
-        String verificationLink = "http://localhost:8080/api/auth/verify?token=" + token;
+        String verificationLink = "http://localhost:5173/verify";
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setTo(toEmail);
         message.setSubject("Wildocs AI - Email Verification");
-        message.setText("Please verify your email by clicking the link: " + verificationLink);
+        message.setText
+        (
+            "Welcome to Wildocs AI!\n\n" +
+            "Use the verification token below to verify your email address:\n\n" +
+            token + "\n\n" +
+            "Submit this token on the verification page: " + verificationLink
+        );
 
         mailSender.send(message);
     }
@@ -41,7 +46,7 @@ public class EmailService
 
         if(user.isVerified())
         {
-            throw new RuntimeException("Email already verified");
+            throw new RuntimeException("Email is already verified");
         }
 
         user.setVerified(true);

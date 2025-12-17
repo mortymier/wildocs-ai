@@ -1,0 +1,442 @@
+.student-dashboard-page
+{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+}
+
+.student-dashboard-shell
+{
+    width: 100%;
+    flex: 1;
+    background-color: white;
+    overflow: hidden;
+}
+
+.student-dashboard-topbar
+{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 0.6vw 1vw;
+    border-bottom: 0.15vw solid #e3e3e3;
+}
+
+.student-dashboard-brand
+{
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+    min-width: 12vw;
+}
+
+.student-dashboard-logo
+{
+    display: flex;
+    align-items: center;
+    gap: 0.7vw;
+}
+
+.student-dashboard-logo-mark
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 0.5vw;
+    background: maroon;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1vw;
+    line-height: 1;
+}
+
+.student-dashboard-logo-wordmark
+{
+    font-weight: 800;
+    font-size: 1vw;
+    color: maroon;
+    letter-spacing: 0.05vw;
+}
+
+.student-dashboard-welcome
+{
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.2vw;
+    color: goldenrod;
+    font-size: 1.1vw;
+    font-weight: 700;
+}
+
+.student-dashboard-actions
+{
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.student-dashboard-icon-btn
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    border: 0.15vw solid #d9d9d9;
+    background: white;
+    cursor: pointer;
+}
+
+.student-dashboard-profile
+{
+    position: relative;
+}
+
+.student-dashboard-profile-menu
+{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5vw);
+    width: 16vw;
+    min-width: 200px;
+    border: 0.12vw solid #d9d9d9;
+    border-radius: 0.8vw;
+    background: white;
+    box-shadow: 0 0.6vw 1.4vw rgba(0, 0, 0, 0.12);
+    padding: 0.8vw;
+    z-index: 20;
+}
+
+.student-dashboard-profile-meta
+{
+    border-bottom: 0.12vw solid #eee;
+    padding-bottom: 0.6vw;
+    margin-bottom: 0.6vw;
+}
+
+.student-dashboard-profile-name
+{
+    margin: 0;
+    font-size: 0.95vw;
+    font-weight: 700;
+    color: #222;
+}
+
+.student-dashboard-profile-email
+{
+    margin: 0.3vw 0 0 0;
+    font-size: 0.85vw;
+    color: #666;
+    word-break: break-word;
+}
+
+.student-dashboard-profile-logout
+{
+    width: 100%;
+    border: none;
+    background: maroon;
+    color: white;
+    font-weight: 700;
+    padding: 0.6vw 0.9vw;
+    border-radius: 0.7vw;
+    cursor: pointer;
+}
+
+.student-dashboard-profile-logout:hover
+{
+    color: gold;
+}
+
+.student-dashboard-content
+{
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.student-dashboard-sidebar
+{
+    width: 18vw;
+    min-width: 200px;
+    border-right: 0.15vw solid #e3e3e3;
+    padding: 1vw 0.6vw;
+    background: white;
+}
+
+.student-dashboard-nav
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vw;
+}
+
+.student-dashboard-nav button
+{
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+    width: 100%;
+    text-align: left;
+    padding: 0.6vw 0.8vw;
+    border: none;
+    border-radius: 0.6vw;
+    background: transparent;
+    color: #3a3a3a;
+    font-size: 0.95vw;
+    cursor: pointer;
+}
+
+.student-dashboard-nav-icon
+{
+    display: inline-flex;
+    width: 1.2vw;
+    min-width: 1.2vw;
+    color: maroon;
+}
+
+.student-dashboard-nav button.active
+{
+    background-color: #f5c6c6;
+    color: maroon;
+    font-weight: 700;
+}
+
+.student-dashboard-nav button:hover
+{
+    background-color: #fbe6e6;
+}
+
+.student-dashboard-main
+{
+    flex: 1;
+    padding: 1.2vw 1.6vw;
+}
+
+.student-dashboard-tabs-row
+{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    border-bottom: 0.12vw solid #e9e9e9;
+    padding-bottom: 0.6vw;
+}
+
+.student-dashboard-tabs
+{
+    display: flex;
+    gap: 1vw;
+}
+
+.student-dashboard-tab
+{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.95vw;
+    color: #777;
+    padding: 0.2vw 0.1vw;
+}
+
+.student-dashboard-tab.active
+{
+    color: maroon;
+    font-weight: 700;
+    border-bottom: 0.15vw solid maroon;
+}
+
+.student-dashboard-template
+{
+    margin-left: auto;
+    border: none;
+    background: goldenrod;
+    color: black;
+    font-weight: 700;
+    font-size: 0.9vw;
+    padding: 0.45vw 0.9vw;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.student-dashboard-cards
+{
+    display: flex;
+    gap: 1.4vw;
+    padding-top: 1.4vw;
+}
+
+.student-dashboard-card
+{
+    width: 18vw;
+    min-width: 220px;
+    border-radius: 0.9vw;
+    border: 0.12vw solid #d2d2d2;
+    overflow: hidden;
+    background: white;
+}
+
+.student-dashboard-card-top
+{
+    background: #dcb3b3;
+    padding: 1vw 1vw 2.6vw 1vw;
+}
+
+.student-dashboard-card-title
+{
+    margin: 0;
+    font-size: 1.2vw;
+    color: black;
+}
+
+.student-dashboard-card-sub
+{
+    margin: 0.4vw 0 0 0;
+    font-size: 0.85vw;
+    color: #4f4f4f;
+}
+
+.student-dashboard-card-body
+{
+    height: 6vw;
+    background: white;
+}
+
+.student-dashboard-section
+{
+    padding-top: 1.2vw;
+}
+
+.student-dashboard-section-title
+{
+    margin: 0;
+    font-size: 1.2vw;
+    color: maroon;
+}
+
+.student-dashboard-empty
+{
+    border: 0.12vw dashed #d2d2d2;
+    border-radius: 0.8vw;
+    padding: 1.2vw;
+    background: #fcfcfc;
+    color: #555;
+    margin-top: 1.2vw;
+}
+
+.student-dashboard-empty h3
+{
+    margin: 0;
+    font-size: 1.05vw;
+}
+
+.student-dashboard-empty p
+{
+    margin: 0.5vw 0 0 0;
+    font-size: 0.9vw;
+}
+
+.student-dashboard-form
+{
+    margin-top: 1vw;
+    border: 0.12vw solid #e3e3e3;
+    border-radius: 0.8vw;
+    padding: 1.2vw;
+    background: white;
+}
+
+.student-dashboard-form-row
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+    margin-bottom: 1vw;
+}
+
+.student-dashboard-form-row.single
+{
+    grid-template-columns: 1fr;
+}
+
+.student-dashboard-form label
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vw;
+    font-size: 0.9vw;
+    color: #444;
+}
+
+.student-dashboard-form input
+{
+    padding: 0.6vw 0.8vw;
+    border: 0.12vw solid #d2d2d2;
+    border-radius: 0.6vw;
+    outline: none;
+    font-size: 0.95vw;
+}
+
+.student-dashboard-form input:focus
+{
+    border-color: maroon;
+}
+
+.student-dashboard-form-actions
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.student-dashboard-form-actions button
+{
+    border: none;
+    background: maroon;
+    color: white;
+    font-weight: 700;
+    padding: 0.55vw 1.1vw;
+    border-radius: 0.8vw;
+    cursor: pointer;
+}
+
+.student-dashboard-form-actions button:hover
+{
+    color: gold;
+}
+
+.student-dashboard-card-actions
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6vw;
+    padding: 0.8vw 1vw;
+}
+
+.student-dashboard-card-actions button
+{
+    border: 0.12vw solid maroon;
+    background: white;
+    color: maroon;
+    font-weight: 700;
+    font-size: 0.85vw;
+    padding: 0.35vw 0.8vw;
+    border-radius: 0.6vw;
+    cursor: pointer;
+}
+
+.student-dashboard-card-actions button:hover
+{
+    background: #fbe6e6;
+}
+
+.student-dashboard-card-actions button.danger
+{
+    border-color: #b10000;
+    color: #b10000;
+}
+
+.student-dashboard-card-actions button.danger:hover
+{
+    background: #ffe6e6;
+}

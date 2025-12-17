@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../api/authService.tsx';
+import type { RegisterForm } from '../components/types.tsx';
 import Footer from '../components/Footer.tsx';
 import user_icon from '../assets/user_icon.png';
 import id_icon from '../assets/id_icon.png';
@@ -10,17 +11,8 @@ import '../styles/Register.css';
 
 export default function Register()
 {
-    type RegisterForm = 
-    {
-        firstName: string;
-        lastName: string;
-        idNum: string;
-        email: string;
-        password: string;
-    };
-
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
     const [role, setRole] = useState<'student' | 'teacher'>('student');

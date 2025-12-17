@@ -1,0 +1,95 @@
+.verify-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 0;
+    padding-bottom: 5vw;
+    min-height: 90vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.verify-container h1
+{
+    margin: 0;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    color: maroon;
+}
+
+.verify-container p
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    font-size: 1.1vw;
+    text-align: center;
+    line-height: 2vw;
+}
+
+.verify-container form
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 3vw 2vw;
+    border: 1px solid maroon;
+    border-radius: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.verify-container label
+{
+    font-weight: 600;
+    font-size: 1.1vw;
+    color: maroon;
+    margin-bottom: 1vw;
+}
+
+.verify-container input
+{
+    padding: 0.6vw 1vw;
+    margin-bottom: 2vw;
+    border: 0.1vw solid maroon;
+    border-radius: 0.5vw;
+    font-size: 1.1vw;
+    background-color: #EEE;
+}
+
+.verify-container input:focus
+{
+    outline-color: gold;
+    background-color: white;
+}
+
+.verify-container button
+{
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    margin-bottom: 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+}
+
+.verify-container form div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+.verify-container form div span
+{
+    margin: 0;
+    font-size: 1vw;
+}
+
+.verify-container form div span:last-child
+{
+    font-weight: 600;
+    color: maroon;
+    cursor: pointer;
+}

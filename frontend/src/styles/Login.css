@@ -153,3 +153,12 @@
     text-decoration: none;
     color: maroon;
 }
+
+.login-container .error
+{
+    margin: 0;
+    margin-bottom: 2vw;
+    color: red;
+    text-align: center;
+    font-size: 1.1vw;
+}

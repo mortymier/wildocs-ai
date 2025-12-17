@@ -23,9 +23,11 @@ export default function Verify()
             await verifyEmail(token);
 
             setSuccess('Emailed verified successfully. Redirecting to login...');
+
             setTimeout(() =>
             {
                 navigate('/login');
+
             }, 3000);
         }
         catch(error: any)

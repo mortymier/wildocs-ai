@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { registerStudent } from '../api/authService.tsx';
 import Footer from '../components/Footer.tsx';
 import user_icon from '../assets/user_icon.png';
 import id_icon from '../assets/id_icon.png';
@@ -8,12 +10,83 @@ import '../styles/Register.css';
 
 export default function Register()
 {
+    type RegisterForm = 
+    {
+        firstName: string;
+        lastName: string;
+        idNum: string;
+        email: string;
+        password: string;
+    };
+
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [success, setSuccess] = useState<string | null>(null);
+    const [confirmpw, setConfirmpw] = useState<string>('');
+    const [formData, setFormData] = useState<RegisterForm>
+    ({
+        firstName: '',
+        lastName: '',
+        idNum: '',
+        email: '',
+        password: '',
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    {
+        const { name, value } = e.target;
+        setFormData((prev) => ({...prev, [name]: value}));
+    };
+
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) =>
+    {
+        const { name, value } = e.target;
+        setFormData((prev) => ({...prev, [name]: value.trimEnd()}));
+    };
+
+    const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) =>
+    {
+        e.preventDefault();
+        setError(null);
+        setSuccess(null);
+        
+        if(formData.password !== confirmpw)
+        {
+            setError('Passwords do not match');
+            return;
+        }
+
+        try
+        {
+            setLoading(true);
+
+            const result = await registerStudent(formData);
+
+            setSuccess(result.message);
+
+            setTimeout(() =>
+            {
+                navigate('/verify');
+
+            }, 4000);
+        }
+        catch(error: any)
+        {
+            setError(error.message);
+        }
+        finally
+        {
+            setLoading(false);
+        }
+    };
+
     return (
         <>
             <main className="register-container">
                 <h1> Create Account </h1>
                 <p> Sign up to WILDOCS AI to get started </p>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <Link to="/">
                         <h2> WILDOCS AI </h2>
                         <h3> AI-Powered SDD Evaluator </h3>
@@ -28,6 +101,9 @@ export default function Register()
                         name="firstName"
                         type="text"
                         placeholder="Enter your first name"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                     />
                     {/* Last Name */}
@@ -40,6 +116,9 @@ export default function Register()
                         name="lastName"
                         type="text"
                         placeholder="Enter your last name"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                     />
                     {/* ID Number */}
@@ -52,6 +131,9 @@ export default function Register()
                         name="idNum"
                         type="text"
                         placeholder="Enter your ID number"
+                        value={formData.idNum}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                     />
                     <hr/>
@@ -65,6 +147,9 @@ export default function Register()
                         name="email"
                         type="email"
                         placeholder="your.name@school.edu"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                     />
                     {/* Password */}
@@ -77,6 +162,9 @@ export default function Register()
                         name="password"
                         type="password"
                         placeholder="Enter your password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                     />
                     {/* Confirm Password */}
@@ -89,6 +177,9 @@ export default function Register()
                         name="confirmpw"
                         type="password"
                         placeholder="Confirm your password"
+                        value={confirmpw}
+                        onChange={(e) => setConfirmpw(e.target.value)}
+                        onBlur={(e) => setConfirmpw(e.target.value.trimEnd())}
                         required
                     />
                     {/* Terms & Conditions */}
@@ -96,10 +187,14 @@ export default function Register()
                         <input type="checkbox"/> 
                         <span> I agree to the Terms & Conditions </span>
                     </div>
+                    {error && <p className="error">{error}</p>}
+                    {success && <p className="success">{success}</p>}
                     {/* Form Buttons */}
                     <div className="register-buttons"> 
-                        <button type="button"> Reset </button>
-                        <button type="submit"> Create Account </button>
+                        <button type="button" disabled={loading}> Reset </button>
+                        <button type="submit" disabled={loading}> 
+                            {loading ? 'Registering...' : 'Create Account'}
+                        </button>
                     </div>
                     {/* Sign In */}
                     <div className="account-actions2"> 

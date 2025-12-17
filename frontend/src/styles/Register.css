@@ -177,3 +177,19 @@
     text-decoration: none;
     color: maroon;
 }
+
+.register-container .error
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    color: red;
+    text-align: center;
+}
+
+.register-container .success
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    color: green;
+    text-align: center;
+}

@@ -80,7 +80,7 @@
     color: maroon;
 }
 
-.register-container input
+.register-container input, .register-container select
 {
     padding: 0.6vw 1vw;
     margin-bottom: 2vw;
@@ -90,7 +90,7 @@
     background-color: #EEE;
 }
 
-.register-container input:focus
+.register-container input:focus, .register-container select:focus
 {
     outline-color: gold;
     background-color: white;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { registerStudent } from '../api/authService.tsx';
+import { register } from '../api/authService.tsx';
 import Footer from '../components/Footer.tsx';
 import user_icon from '../assets/user_icon.png';
 import id_icon from '../assets/id_icon.png';
@@ -23,6 +23,7 @@ export default function Register()
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
+    const [role, setRole] = useState<'student' | 'teacher'>('student');
     const [confirmpw, setConfirmpw] = useState<string>('');
     const [formData, setFormData] = useState<RegisterForm>
     ({
@@ -61,7 +62,7 @@ export default function Register()
         {
             setLoading(true);
 
-            const result = await registerStudent(formData);
+            const result = await register(formData, role);
 
             setSuccess(result.message);
 
@@ -91,6 +92,22 @@ export default function Register()
                         <h2> WILDOCS AI </h2>
                         <h3> AI-Powered SDD Evaluator </h3>
                     </Link>
+                    {/* Role */}
+                    <div className="icon-label">
+                        <img src={user_icon} alt="User icon"/> 
+                         <label htmlFor="role"> Role </label> 
+                    </div>
+                    <select
+                        id="role"
+                        name="role"
+                        value={role}
+                        onChange={(e) => setRole(e.target.value as 'student' | 'teacher')}
+                        required
+                    >
+                        <option value=""> </option>
+                        <option value="student"> STUDENT </option>
+                        <option value="teacher"> TEACHER </option>
+                    </select>
                     {/* First Name */}
                     <div className="icon-label"> 
                         <img src={user_icon} alt="User icon"/> 
@@ -161,7 +178,8 @@ export default function Register()
                         id="password"
                         name="password"
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Enter your password (at least 6 characters)"
+                        minLength={6}
                         value={formData.password}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -176,7 +194,8 @@ export default function Register()
                         id="confirmpw"
                         name="confirmpw"
                         type="password"
-                        placeholder="Confirm your password"
+                        placeholder="Confirm your password (at least 6 characters)"
+                        minLength={6}
                         value={confirmpw}
                         onChange={(e) => setConfirmpw(e.target.value)}
                         onBlur={(e) => setConfirmpw(e.target.value.trimEnd())}

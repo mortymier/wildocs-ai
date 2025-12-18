@@ -1,0 +1,109 @@
+.createclass-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 0;
+    padding-bottom: 5vw;
+    min-height: 90vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.createclass-container h1
+{
+    margin: 0;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    color: maroon;
+}
+
+.createclass-container p:first-of-type
+{
+    margin: 0;
+    margin-bottom: 3vw;
+    font-size: 1.1vw;
+}
+
+.createclass-container form
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 3vw 2vw;
+    border: 1px solid maroon;
+    border-top: 0.5vw solid goldenrod;
+    border-radius: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.createclass-container label
+{
+    font-weight: 600;
+    font-size: 1.1vw;
+    color: maroon;
+    margin-bottom: 0.5vw;
+}
+
+.createclass-container input, .createclass-container select
+{
+    padding: 0.6vw 1vw;
+    margin-bottom: 2vw;
+    border: 0.1vw solid maroon;
+    border-radius: 0.5vw;
+    font-size: 1.1vw;
+    background-color: #EEE;
+}
+
+.createclass-container input:focus, .createclass-container select:focus
+{
+    outline-color: gold;
+    background-color: white;
+}
+
+.createclass-container .error
+{
+    margin: 0;
+    color: red;
+    text-align: center;
+}
+
+.createclass-container .success
+{
+    margin: 0;
+    color: green;
+    text-align: center;
+}
+
+.createclass-buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+    gap: 1vw;
+}
+
+.createclass-buttons button
+{
+    width: 11vw;
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.75vw 0;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.createclass-buttons button:first-child
+{
+    border: 0.2vw solid maroon;
+    background-color: white;
+    color: maroon;
+}
+
+.createclass-buttons button:last-child
+{
+    border: 0.2vw solid goldenrod;
+    background-color: goldenrod;
+    color: white;
+}

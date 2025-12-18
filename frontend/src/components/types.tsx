@@ -29,3 +29,11 @@ export type ProtectedRouteProps =
     allowedRoles: Array<'ADMIN' | 'TEACHER' | 'STUDENT'>;
 };
 
+export type CreateClassForm = 
+{
+    classCode: string;
+    className: string;
+    schoolYear: string;
+    semester: string;
+    section: string;
+}

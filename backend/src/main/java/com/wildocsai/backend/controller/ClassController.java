@@ -1,0 +1,47 @@
+package com.wildocsai.backend.controller;
+
+import com.wildocsai.backend.dto.CreateClassRequest;
+import com.wildocsai.backend.entity.ClassEntity;
+import com.wildocsai.backend.service.ClassService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/class")
+@RequiredArgsConstructor
+public class ClassController
+{
+    private final ClassService classService;
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createClass(@RequestBody CreateClassRequest request, @RequestParam String email)
+    {
+        try
+        {
+            ClassEntity newClass = classService.createClass(request, email);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newClass);
+        }
+        catch(RuntimeException e)
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/all/teacher")
+    public ResponseEntity<?> getClassesByEmail(@RequestParam String email)
+    {
+        try
+        {
+            List<ClassEntity> classes = classService.getClassesByEmail(email);
+            return ResponseEntity.ok(classes);
+        }
+        catch(RuntimeException e)
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+}
